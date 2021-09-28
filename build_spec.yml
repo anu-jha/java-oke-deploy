@@ -32,3 +32,6 @@ outputArtifacts:
   - name: build_jar
     type: BINARY
     location: src/com/sample/build_jar.jar
+  - name: oke
+    type: BINARY
+    location: oke.yaml
