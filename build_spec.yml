@@ -18,20 +18,19 @@ steps:
         runAs: root
   - type: Command
     timeoutInSeconds: 400
-    name: "Create Jar File"
+    name: "Create Docker image"
     command: |
-      cd  src/com/sample/
-      jar cf build_jar.jar Main.java
+      docker build -t hello-world:1.0 .
     onFailure:
       - type: Command
         command: |
-          echo "Creating jar File failed"
+          echo "Creating Docker image failed"
         timeoutInSeconds: 400
         runAs: root
 outputArtifacts:
-  - name: build_jar
-    type: BINARY
-    location: src/com/sample/build_jar.jar
+  - name: hello_world_image
+    type: DOCKER_IMAGE
+    location: hello-world:1.0
   - name: oke
     type: BINARY
     location: oke.yaml
