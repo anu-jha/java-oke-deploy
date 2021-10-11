@@ -21,7 +21,7 @@ spec:
       containers:
         - name: helloworld
           # enter the path to your image, be sure to include the correct region prefix
-          image: iad.ocir.io/idttmev3z6fl/anjhjha:1.0
+          image: iad.ocir.io/idttmev3z6fl/anjhjha:latest
           ports:
             - containerPort: 8888
               protocol: TCP
